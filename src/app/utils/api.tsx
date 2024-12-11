@@ -20,3 +20,13 @@ export const deleteProduct = async (id: string): Promise<void> => {
   });
   if (!res.ok) throw new Error("Ürün silinirken bir sorun oluştu");
 };
+
+export const createProduct = async (data: Product): Promise<Product> => {
+  const res = await fetch("http://localhost:3030/products", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error("Ürün eklendiğinde bir sorun oluştu");
+
+  return res.json();
+};
