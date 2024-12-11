@@ -4,7 +4,7 @@ import Image from "next/image";
 import profile from "@/app/assets/images/admin.png";
 const Header = () => {
   return (
-    <header className="pl-8 border p-2 flex justify-between">
+    <header className="pl-8 border-b p-2 flex justify-between">
       <Input />
 
       <div className="flex gap-5 items-center">

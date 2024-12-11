@@ -17,6 +17,10 @@ body {
   .container {
     @apply py-5 md:py-10 px-5 md:px-10 lg:px-20 max-w-[1440px] mx-auto;
   }
+
+  .title {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
 }
 
 .navbar {
@@ -30,4 +34,16 @@ body {
   &:has(input:checked) .nav-text {
     display: block;
   }
+}
+
+canvas {
+  width: 100% !important;
+}
+
+table th {
+  padding: 0 20px;
+}
+
+table td {
+  padding: 0 20px;
 }
