@@ -30,3 +30,20 @@ export const createProduct = async (data: Product): Promise<Product> => {
 
   return res.json();
 };
+
+export const getProductsById = async (id: string): Promise<Product> => {
+  const res = await fetch(`http://localhost:3030/products/${id}`);
+
+  if (!res.ok) throw new Error("Böyle bir ürün bulunamadı");
+  return res.json();
+};
+
+export const updateProduct = async (data: Product): Promise<Product> => {
+  const res = await fetch(`http://localhost:3030/products/${data.id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error("Ürün güncellerken bir sorun oluştu");
+
+  return res.json();
+};

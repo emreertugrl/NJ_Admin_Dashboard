@@ -3,13 +3,15 @@ type Props = {
     label: string;
     name: string;
   };
+  value?: string;
 };
 
-const Input = ({ item }: Props) => {
+const Input = ({ item, value }: Props) => {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={item.name}>{item.label}</label>
       <input
+        defaultValue={value}
         type="text"
         id={item.name}
         name={item.name}
