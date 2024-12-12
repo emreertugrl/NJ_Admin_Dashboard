@@ -1,5 +1,12 @@
-const Users = () => {
-  return <div>Users</div>;
+import UsersTable from "@/app/components/table/UsersTable";
+
+const Users = async () => {
+  return (
+    <div>
+      <h1 className="title">Kullanıcılar</h1>
+      <UsersTable />
+    </div>
+  );
 };
 
 export default Users;

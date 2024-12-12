@@ -4,12 +4,12 @@ import Image from "next/image";
 import profile from "@/app/assets/images/admin.png";
 const Header = () => {
   return (
-    <header className="pl-8 border-b p-2 flex justify-between">
+    <header className="md:pl-8 border-b py-2 flex justify-between ">
       <Input />
 
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-1 sm:gap-5 items-center">
         <BiSolidBellRing />
-        <div className="flex gap-3">
+        <div className="flex gap-1">
           <Image
             alt="profile-photo"
             src={profile}

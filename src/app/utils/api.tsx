@@ -1,4 +1,4 @@
-import { Order, Product } from "../types";
+import { Order, Product, User } from "../types";
 
 export const getOrders = async (): Promise<Order[]> => {
   const res = await fetch("http://localhost:3030/orders");
@@ -46,4 +46,18 @@ export const updateProduct = async (data: Product): Promise<Product> => {
   if (!res.ok) throw new Error("Ürün güncellerken bir sorun oluştu");
 
   return res.json();
+};
+
+export const getUsers = async (): Promise<User[]> => {
+  const res = await fetch("http://localhost:3030/users");
+
+  if (!res.ok) throw new Error("Kullanıcıları alırken bir sorun oluştu");
+  return res.json();
+};
+
+export const deleteUser = async (id: string): Promise<void> => {
+  const res = await fetch(`http://localhost:3030/users/${id}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) throw new Error("Kullanıcı silinirken bir sorun oluştu");
 };
