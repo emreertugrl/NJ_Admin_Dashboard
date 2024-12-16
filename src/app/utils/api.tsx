@@ -61,3 +61,11 @@ export const deleteUser = async (id: string): Promise<void> => {
   });
   if (!res.ok) throw new Error("Kullanıcı silinirken bir sorun oluştu");
 };
+
+export const getUserById = async (id: string): Promise<User> => {
+  const res = await fetch(`http://localhost:3030/users/${id}`, {
+    method: "GET",
+  });
+  if (!res.ok) throw new Error("Böyle bir kullanıcı bulunamadı");
+  return res.json();
+};
